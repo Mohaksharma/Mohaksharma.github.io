@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #question {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        font-size: 20px;
+        font-weight: bold;
+
+      }
+      .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    }
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+      #yes-option {
+        position: absolute;
+        left: 50px;
+        top: 100px;
+        padding: 20px;
+        background-color: lightgreen;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      #no-option {
+        position: absolute;
+        left: 200px;
+        top: 100px;
+        padding: 20px;
+        background-color: lightcoral;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="question">DO YOU WANT TO GO ON A DATE???
+    </div>
+    <div id="yes-option" class="tooltip">Yes<span class="tooltiptext">Call Me!</span></div>
+    <div id="no-option">No</div>
+
+    <script>
+      const noOption = document.getElementById("no-option");
+
+      noOption.addEventListener("mouseover", function() {
+        let x = Math.floor(Math.random() * window.innerWidth);
+        let y = Math.floor(Math.random() * window.innerHeight);
+        noOption.style.left = x + "px";
+        noOption.style.top = y + "px";
+
+      });
+    </script>
+  </body>
+</html>
